@@ -15,7 +15,7 @@ Durante minha experiência profissional em uma grande rede farmacêutica (Drogar
 
 Muitas vezes, o controle de lotes é manual ou visual, o que leva ao vencimento de produtos nas prateleiras e prejuízo financeiro. Além disso, no momento da venda, a agilidade é crucial.
 
-Como estudante do **5º Semestre de Ciência da Computação**, decidi unir a teoria acadêmica com essa vivência prática. O **PharmaStock** não é apenas um CRUD; é uma solução desenhada com visão de Produto (Product Owner) para resolver o problema do **FEFO (First Expired, First Out)** — o primeiro que vence é o primeiro que sai.
+Como estudante do **5º Semestre de Ciência da Computação**, decidi unir a teoria acadêmica com essa vivência prática. O **PharmaStock** não é apenas um CRUD; é uma solução desenhada para resolver o problema do **FEFO (First Expired, First Out)** — o primeiro que vence é o primeiro que sai.
 
 ---
 
@@ -95,5 +95,6 @@ npm run start:dev
 cd ../frontend
 npm install
 npm run dev
+
 
 
