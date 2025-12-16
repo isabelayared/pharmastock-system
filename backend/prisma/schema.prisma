@@ -1,9 +1,3 @@
-// Isso diz pro Prisma que vamos usar JavaScript/TypeScript
-generator client {
-  provider = "prisma-client-js"
-}
-
-// Aqui configuramos o MySQL
 generator client {
   provider = "prisma-client-js"
 }
@@ -13,26 +7,20 @@ datasource db {
   url      = "file:./dev.db"
 }
 
-// Tabela de Produtos (O cadastro geral)
 model Product {
-  id        Int      @id @default(autoincrement())
-  name      String
-  code      String   @unique // Código de barras (EAN)
-  category  String?
-  createdAt DateTime @default(now())
-  
-  // Relação: Um produto pode ter vários lotes
-  batches   Batch[]
+  id             Int      @id @default(autoincrement())
+  name           String
+  code           String   @unique
+  category       String
+  batches        Batch[]
+  createdAt      DateTime @default(now())
 }
 
-// Tabela de Lotes (Onde fica a validade e a quantidade real)
 model Batch {
   id             Int      @id @default(autoincrement())
-  code           String   // Código do lote (ex: Lote A2025)
-  quantity       Int      // Quantos tem nesse lote
-  expirationDate DateTime // Data de validade
-  
-  // Conexão com o Produto
-  product        Product  @relation(fields: [productId], references: [id])
+  code           String
+  quantity       Int
+  expirationDate DateTime
   productId      Int
+  product        Product  @relation(fields: [productId], references: [id])
 }
