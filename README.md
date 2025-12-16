@@ -4,7 +4,7 @@
 
 > **"A tecnologia aplicada para evitar o desperdício de medicamentos e agilizar o atendimento no balcão."**
 
-🔗 **Acesse o Sistema Online:** [CLIQUE AQUI PARA TESTAR]([https://pharmastock-system.vercel.app](https://pharmastock-system-c0e134su4-isabela-yared-soares-projects.vercel.app)/)  
+🔗 **Acesse o Sistema Online:** [CLIQUE AQUI PARA TESTAR]([https://pharmastock-system.vercel.app](https://pharmastock-system-c0e134su4-isabela-yared-soares-projects.vercel.app)/])  
 *(Nota: O Backend está hospedado no plano gratuito do Render, pode levar 50s para "acordar" no primeiro acesso).*
 
 ---
@@ -95,6 +95,7 @@ npm run start:dev
 cd ../frontend
 npm install
 npm run dev
+
 
 
 
