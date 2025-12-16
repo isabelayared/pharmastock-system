@@ -4,12 +4,12 @@
 
 > **"A tecnologia aplicada para evitar o desperdício de medicamentos e agilizar o atendimento no balcão."**
 
-🔗 **Acesse o Sistema Online:** [CLIQUE AQUI PARA TESTAR](https://pharmastock-system.vercel.app/)  
+🔗 **Acesse o Sistema Online:** [CLIQUE AQUI PARA TESTAR]([https://pharmastock-system.vercel.app](https://pharmastock-system-c0e134su4-isabela-yared-soares-projects.vercel.app))  
 *(Nota: O Backend está hospedado no plano gratuito do Render, pode levar 50s para "acordar" no primeiro acesso).*
 
 ---
 
-## 📖 A História por Trás do Projeto
+## A História por Trás do Projeto
 
 Durante minha experiência profissional em uma grande rede farmacêutica (Drogaria São Paulo), notei uma "dor" latente na operação diária: **o controle de validade e perdas.**
 
@@ -19,29 +19,29 @@ Como estudante do **5º Semestre de Ciência da Computação**, decidi unir a te
 
 ---
 
-## 🛠️ Tecnologias e Arquitetura
+## Tecnologias e Arquitetura
 
 O projeto foi desenvolvido utilizando uma arquitetura moderna **Fullstack**, separando as responsabilidades para garantir escalabilidade.
 
-### 🎨 Frontend (A "Cara" do Sistema)
+### Frontend (A "Cara" do Sistema)
 - **React + Vite:** Para uma interface ultra-rápida e reativa.
 - **TypeScript:** Para garantir tipagem segura e evitar erros de código.
 - **TailwindCSS:** Estilização moderna e responsiva.
 - **Recharts:** Biblioteca para os gráficos de análise de estoque.
 
-### 🧠 Backend (O "Cérebro")
+### Backend (O "Cérebro")
 - **NestJS:** Framework Node.js progressivo (padrão de mercado enterprise).
 - **Prisma ORM:** Para comunicação eficiente e segura com o banco de dados.
 - **SQLite:** Banco de dados relacional (escolhido pela portabilidade neste MVP).
 
-### ☁️ Infraestrutura (DevOps)
+### Infraestrutura (DevOps)
 - **Vercel:** Hospedagem do Frontend.
 - **Render:** Hospedagem da API Backend.
 - **GitHub:** Versionamento e CI/CD manual.
 
 ---
 
-## 🎓 Aplicação dos Conceitos da Faculdade
+## Aplicação dos Conceitos da Faculdade
 
 Este projeto consolida conhecimentos de diversas matérias da graduação em Ciência da Computação:
 
@@ -60,7 +60,7 @@ Este projeto consolida conhecimentos de diversas matérias da graduação em Ci�
 
 ---
 
-## ✨ Funcionalidades Principais
+## Funcionalidades Principais
 
 ### 1. Cadastro Inteligente (Busca Externa)
 Ao cadastrar um produto, o usuário não precisa digitar tudo. O sistema consome uma API simulada que busca o produto pelo nome (ex: "Dorf") e preenche automaticamente o EAN e Categoria, reduzindo erros humanos.
@@ -77,7 +77,7 @@ Simulação de venda rápida. O sistema baixa automaticamente o estoque do lote 
 
 ---
 
-## 🚀 Como Rodar Localmente
+## Como Rodar Localmente
 
 Se quiser rodar o projeto na sua máquina:
 
@@ -95,6 +95,7 @@ npm run start:dev
 cd ../frontend
 npm install
 npm run dev
+
 
 
 
