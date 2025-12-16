@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { BarChart, Bar, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { Menu, X, Package, ShoppingCart, LogOut, Search, Calendar, AlertTriangle } from 'lucide-react'; // Ícones para ficar bonito
+import { Menu, X, Package, ShoppingCart, LogOut, Search, Calendar } from 'lucide-react';
 import './index.css';
 
 interface Batch { id: number; quantity: number; expirationDate: string; code: string; }
