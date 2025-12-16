@@ -11,7 +11,7 @@
 
 ## 📖 A História por Trás do Projeto
 
-Durante minha experiência profissional em grandes redes farmacêuticas (Drogaria São Paulo), notei uma "dor" latente na operação diária: **o controle de validade e perdas.**
+Durante minha experiência profissional em uma grande rede farmacêutica (Drogaria São Paulo), notei uma "dor" latente na operação diária: **o controle de validade e perdas.**
 
 Muitas vezes, o controle de lotes é manual ou visual, o que leva ao vencimento de produtos nas prateleiras e prejuízo financeiro. Além disso, no momento da venda, a agilidade é crucial.
 
@@ -95,4 +95,5 @@ npm run start:dev
 cd ../frontend
 npm install
 npm run dev
+
 
