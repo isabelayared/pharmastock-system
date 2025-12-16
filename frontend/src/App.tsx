@@ -6,6 +6,9 @@ interface Batch { id: number; quantity: number; expirationDate: string; code: st
 interface Product { id: number; name: string; code: string; category: string; batches: Batch[]; }
 interface ExternalProduct { code: string; name: string; category: string; }
 
+// URL DA API (BACKEND NO RENDER)
+const API_URL = 'https://pharmastock-system.onrender.com';
+
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loginUser, setLoginUser] = useState('');
@@ -44,7 +47,7 @@ function App() {
   };
 
   const fetchProducts = () => {
-    fetch('http://localhost:3000/products')
+    fetch(`${API_URL}/products`)
       .then((res) => res.json())
       .then((data: Product[]) => {
         setProducts(data);
@@ -62,7 +65,7 @@ function App() {
     // Só busca se tiver 3 letras ou mais
     if (value.length > 2) {
       try {
-        const res = await fetch(`http://localhost:3000/products/external-search?q=${value}`);
+        const res = await fetch(`${API_URL}/products/external-search?q=${value}`);
         const data = await res.json();
         setExternalResults(data);
         setShowResults(true); // Mostra a lista
@@ -83,7 +86,7 @@ function App() {
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/products', {
+      const response = await fetch(`${API_URL}/products`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, code, category, quantity, expirationDate, batchCode })
@@ -109,7 +112,7 @@ function App() {
       return;
     }
     try {
-      let res = await fetch(`http://localhost:3000/products/code/${sellInput}`);
+      let res = await fetch(`${API_URL}/products/code/${sellInput}`);
       let product = await res.json();
       if (!product && sellInput.length > 3) {
         const found = products.find(p => p.name.toLowerCase().includes(sellInput.toLowerCase()));
@@ -122,7 +125,7 @@ function App() {
 
   const processSale = async (ean: string, batchId: number | null, batchCodeString?: string) => {
     const payload = { code: ean, quantity: Number(sellQty), batchId, batchCodeString };
-    const res = await fetch('http://localhost:3000/products/sell', {
+    const res = await fetch(`${API_URL}/products/sell`, {
       method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
     });
     const data = await res.json();
@@ -133,7 +136,7 @@ function App() {
   };
 
   const handleDelete = async (id: number) => {
-    if (confirm('Excluir?')) { await fetch(`http://localhost:3000/products/${id}`, { method: 'DELETE' }); fetchProducts(); }
+    if (confirm('Excluir?')) { await fetch(`${API_URL}/products/${id}`, { method: 'DELETE' }); fetchProducts(); }
   };
 
   const prepareChartData = (data: Product[]) => setChartData(data.map(p => ({ name: p.name, estoque: p.batches?.reduce((acc, b) => acc + b.quantity, 0) || 0 })));
@@ -176,7 +179,7 @@ function App() {
     <div className="min-h-screen bg-gray-50 flex font-sans">
       <aside className="w-64 bg-slate-900 text-white hidden md:block p-6 flex-shrink-0">
         <h1 className="text-2xl font-bold text-blue-400">PharmaStock</h1>
-        <p className="text-slate-500 text-xs mt-1">SISTEMA v3.4 (BUSCA CORRIGIDA)</p>
+        <p className="text-slate-500 text-xs mt-1">SISTEMA ONLINE (PRO)</p>
         <nav className="mt-10 space-y-3">
           <button onClick={() => setActiveTab('estoque')} className={`w-full text-left p-3 rounded flex gap-2 ${activeTab === 'estoque' ? 'bg-blue-600 shadow' : 'hover:bg-slate-800'}`}>📦 Estoque</button>
           <button onClick={() => setActiveTab('caixa')} className={`w-full text-left p-3 rounded flex gap-2 ${activeTab === 'caixa' ? 'bg-emerald-600 shadow' : 'hover:bg-slate-800'}`}>🛒 Caixa</button>
